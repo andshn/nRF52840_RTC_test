@@ -41,7 +41,21 @@ if __name__ == "__main__":
     PORT = args.port
     BAUDRATE = 115200
 
+    tolerance = 0.01
+    target_fraction = 0
+    while True:
+      now = time.time()
+      fraction = now - int(now)
+        
+      if abs(fraction - target_fraction) <= tolerance:
+        break;
+      else:
+        sleep_time = (target_fraction - fraction) * 0.8
+        if sleep_time > 0:
+          time.sleep(sleep_time)
+
     command = "set_rtc %d" % time.time()
+    print(time.time())
     response = send_and_receive(PORT, BAUDRATE, command)
 
     if response.strip() == command.strip():
