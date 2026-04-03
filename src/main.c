@@ -150,8 +150,8 @@ int main(void) {
   uart_printf("\nTest start\n");
 
   for (;;) {
-    __disable_irq();
     do {
+      __disable_irq();
       status_buf = serial_cmd_pop_char(&serial_cmd_state, &buf);
       __enable_irq();
       if (status_buf) {
