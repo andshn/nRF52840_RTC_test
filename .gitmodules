@@ -1,0 +1,9 @@
+[submodule "lib/uf2"]
+	path = lib/uf2
+	url = git@github.com:microsoft/uf2.git
+[submodule "lib/nrfx"]
+	path = lib/nrfx
+	url = git@github.com:NordicSemiconductor/nrfx.git
+[submodule "lib/CMSIS_6"]
+	path = lib/CMSIS_6
+	url = git@github.com:ARM-software/CMSIS_6.git
